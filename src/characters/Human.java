@@ -79,4 +79,8 @@ public abstract class Human
     public Integer getHonestyIndex() {
         return honestyIndex;
     }
+
+    public void move(Place place) {
+        this.currentPlace = place;
+    }
 }
