@@ -1,7 +1,9 @@
 package polity;
 
-import characters.Human;
+import actions.PowerCarrieable;
 
 public class Power {
-    Human owner;
+    PowerCarrieable owner;
+    Boolean accepted;
+    Demos demos;
 }

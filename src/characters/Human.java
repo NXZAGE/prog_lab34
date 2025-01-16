@@ -4,15 +4,17 @@ import abstractions.Creature;
 import abstractions.Place;
 import actions.HeartPainFeelable;
 import actions.Movable;
+import actions.PowerCarrieable;
 import actions.Scareable;
 import actions.Sickable;
 import actions.VoiceCallable;
 import records.Person;
 import data.Gender;
+import polity.Power;
 
 public abstract class Human
         extends Creature
-        implements VoiceCallable, HeartPainFeelable, Scareable, Sickable, Movable {
+        implements VoiceCallable, HeartPainFeelable, Scareable, Sickable, Movable, PowerCarrieable {
 
     Person person;
     Place currentPlace;
@@ -43,5 +45,13 @@ public abstract class Human
 
     public void  move(Place place) {
         this.currentPlace = place;
+    }
+
+    public void acceptPower(Power power) {
+        System.out.println("Принял(a) власть");
+    }
+
+    public void losePower(Power power) {
+        System.out.println("Потерял(a) власть");
     }
 }

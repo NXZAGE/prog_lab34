@@ -10,6 +10,6 @@ public class Demos {
     }
 
     public void takeAwayPower(PowerCarrieable human) {
-
+        
     }
 }
