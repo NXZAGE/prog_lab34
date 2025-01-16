@@ -1,12 +1,16 @@
 package characters;
 
+import java.util.ArrayList;
+
 import abstractions.Creature;
 import abstractions.Place;
 import actions.HeartPainFeelable;
 import actions.Movable;
 import actions.PowerCarrieable;
+import actions.PrisonResponsible;
 import actions.Scareable;
 import actions.Sickable;
+import actions.Speakable;
 import actions.VoiceCallable;
 import records.Person;
 import data.Gender;
@@ -14,10 +18,11 @@ import polity.Power;
 
 public abstract class Human
         extends Creature
-        implements VoiceCallable, HeartPainFeelable, Scareable, Sickable, Movable, PowerCarrieable {
+        implements VoiceCallable, HeartPainFeelable, Scareable, Sickable, Movable, PowerCarrieable, Speakable, PrisonResponsible {
 
     Person person;
     Place currentPlace;
+    Integer honestyIndex;
 
     public Human(String name, Gender gender) {
         person = new Person(name, gender);
@@ -43,7 +48,7 @@ public abstract class Human
         System.out.println("Выздоровел");
     }
 
-    public void  move(Place place) {
+    public void Smove(Place place) {
         this.currentPlace = place;
     }
 
@@ -53,5 +58,25 @@ public abstract class Human
 
     public void losePower(Power power) {
         System.out.println("Потерял(a) власть");
+    }
+
+    public void say(String phrase) {
+        System.out.println(phrase);
+    }
+
+    public void sayTo(Speakable partner, String phrase) {
+        System.out.println(phrase);
+    }
+
+    public void sayTo(ArrayList<Speakable> partnters, String phrase) {
+        System.out.println(phrase);
+    }
+
+    public void changeHonestyIndex() {
+
+    }
+
+    public Integer getHonestyIndex() {
+        return honestyIndex;
     }
 }
