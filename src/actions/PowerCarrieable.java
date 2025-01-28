@@ -1,7 +1,8 @@
 package actions;
-import polity.Power;
+import polity.Demos;
 
 public interface PowerCarrieable {
-    public void acceptPower(Power power);
-    public void losePower(Power power);
+    public boolean isAcceptPower(Demos requester);
+    public void influencePolicy(Demos evaluater);
+    public int getHonestyIndex();
 }

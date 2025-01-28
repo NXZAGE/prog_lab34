@@ -2,9 +2,9 @@ package places;
 
 import abstractions.Place;
 
-public final class TrottyXMomHouse extends Place {
-    public TrottyXMomHouse() {
-        super("Дом крестой матери Тротти");
+public final class UncertainPlace extends Place {
+    public UncertainPlace() {
+        super("uncertain place");
     }
 
     @Override
