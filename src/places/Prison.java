@@ -47,6 +47,24 @@ public class Prison extends Place {
         System.out.println(message);
     }
 
+    public String getInfo() {
+        String info = """
+                ~~~~~~~~~~PRISON INFO~~~~~~~~~~
+                Заключенные:
+                """;
+        for (int idx = 0; idx < prisoners.size(); ++idx) {
+            info += String.format("%d. %s\n", idx + 1, prisoners.get(idx).toString());
+        }
+
+        if (prisoners.isEmpty()) {
+            info += "none\n";
+        }
+
+        info += "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+
+        return info;
+    }
+
     @Override
     public String toString() {
         return "Тюрьма.";

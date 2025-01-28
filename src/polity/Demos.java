@@ -12,7 +12,7 @@ public class Demos implements PrisonResponsible {
         this.power = new Power();
     }
 
-    public Demos(PowerCarrieable powerHolder) {
+    public Demos(PowerCarrieable powerHolder) throws RuntimeException {
         this.power = new Power(powerHolder);
         try {
             this.updateTrustIndex();

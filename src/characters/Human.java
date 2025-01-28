@@ -219,24 +219,28 @@ public class Human
     }
 
     public void getSick(Sickable.Disease disease) {
-        int damage = switch (disease) {
-            case Sickable.Disease.PLAGUE -> {
+        int damage;
+        switch (disease) {
+            case Sickable.Disease.PLAGUE: {
                 int minDamage = 60;
                 int maxDamage = 100;
-                yield utils.Random.getInt(minDamage, maxDamage);
+                damage = utils.Random.getInt(minDamage, maxDamage);
+                break;
             }
-            case Sickable.Disease.COLD -> {
+            case Sickable.Disease.COLD: {
                 int minDamage = 5;
                 int maxDamage = 20;
-                yield utils.Random.getInt(minDamage, maxDamage);
+                damage = utils.Random.getInt(minDamage, maxDamage);
+                break;
             }
-            case Sickable.Disease.WEAKNESS -> {
+            case Sickable.Disease.WEAKNESS: {
                 int minDamage = 0;
                 int maxDamage = 5;
-                yield utils.Random.getInt(minDamage, maxDamage);
+                damage = utils.Random.getInt(minDamage, maxDamage);
+                break;
             }
-            default -> {
-                yield 0;
+            default: {
+                damage = 0;
             }
         };
 

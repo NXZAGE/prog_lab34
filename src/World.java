@@ -20,7 +20,12 @@ public final class World {
         this.krispin = new Krispin();
         this.trotty = new Trotty();
         this.trottyMom = new TrottyMom();
-        this.demos = new Demos(aprilDad);
+        try {    
+            this.demos = new Demos(aprilDad);
+        } catch (RuntimeException exception) {
+            System.out.println("Я каюсь, я бездарность, я безнадежен, убейте меня, прошу (");
+            System.exit(0);
+        }
         this.prison = new Prison();
         this.trottyXMomHouse = new TrottyXMomHouse();
         this.prison.addPrisoner(april, "unknown", this.trottyMom);
@@ -64,6 +69,7 @@ public final class World {
             trotty.move(trottyXMomHouse);
         }
         System.out.println(trotty.getInfo());
+        System.out.println(prison.getInfo());
         prison.releasePrisoner(april, "No guilt", demos);
         demos.givePower(april);
         System.out.println(april.getInfo());
